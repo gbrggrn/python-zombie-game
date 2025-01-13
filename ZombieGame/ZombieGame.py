@@ -88,13 +88,12 @@ def prompt_question(settings, generated_numbers):
 
     if settings[1] == "*":
         correct = rand_int * settings[2]
-        answer = input_valid_int(f'Vad blir {rand_int} {settings[1]} {settings[2]}? ', 0, math.inf)
     elif settings[1] == "//":
         correct = rand_int // settings[2]
-        answer = input_valid_int(f'Vad blir {rand_int} {settings[1]} {settings[2]}? ', 0, math.inf)
     elif settings[1] == "%":
         correct = rand_int % settings[2]
-        answer = input_valid_int(f'Vad blir {rand_int} {settings[1]} {settings[2]}? ', 0, math.inf)
+
+    answer = input_valid_int(f'Vad blir {rand_int} {settings[1]} {settings[2]}? ', 0, math.inf)
 
     if answer == correct:
         generated_numbers["success"] = True
